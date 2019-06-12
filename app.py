@@ -8,7 +8,7 @@ my_uuid = str(uuid.uuid1())
 @app.route('/')
 def mainmenu():
 
-    return """
+    response = """
     <html>
     <body>
      <h1><u>Event Agenda</u></h1>
@@ -24,6 +24,8 @@ def mainmenu():
     </body>
     </html>
     """.format(my_uuid)
+
+    return response
 
 if __name__ == "__main__":
 	app.run(debug=False,host='0.0.0.0', port=int(os.getenv('PORT', '5000')))
